@@ -8,13 +8,18 @@ const emailBtn = document.querySelector(".email-btn");
 applyBtn.disabled = true;
 paymentCheckbox.disabled = true;
 
-// Enable checkbox ONLY after email button is clicked
-emailBtn.addEventListener("click", () => {
+// Check if user already clicked email before
+if (localStorage.getItem("emailSent") === "yes") {
   paymentCheckbox.disabled = false;
-  alert("Email app opened. Please send your payment proof, then confirm.");
+}
+
+// When email button is clicked
+emailBtn.addEventListener("click", () => {
+  localStorage.setItem("emailSent", "yes");
+  paymentCheckbox.disabled = false;
 });
 
-// Enable Apply button ONLY after checkbox is checked
+// Enable Apply button only when checkbox is checked
 paymentCheckbox.addEventListener("change", () => {
   applyBtn.disabled = !paymentCheckbox.checked;
 });
@@ -22,6 +27,7 @@ paymentCheckbox.addEventListener("change", () => {
 // Handle form submit
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  localStorage.removeItem("emailSent"); // reset for next use
   form.classList.add("hidden");
   reviewBox.classList.remove("hidden");
   startCountdown(300);
