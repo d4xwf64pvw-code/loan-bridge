@@ -70,3 +70,22 @@ if (statusText) {
     statusText.style.color = "orange";
   }
 }
+window.addEventListener("load", () => {
+  const status = localStorage.getItem("loanStatus");
+  const message = document.getElementById("loan-status-message");
+
+  if (status === "approved") {
+    message.innerHTML = "✅ Your loan has been approved. Our team will contact you.";
+    message.style.color = "green";
+  }
+
+  if (status === "rejected") {
+    message.innerHTML = "❌ Your loan application was not approved.";
+    message.style.color = "red";
+  }
+
+  if (!status || status === "pending") {
+    message.innerHTML = "⏳ Your loan is under review. Please check back later.";
+    message.style.color = "orange";
+  }
+});
