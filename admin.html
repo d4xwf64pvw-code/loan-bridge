@@ -47,16 +47,18 @@
 
   <p id="result"></p>
 </div>
-
 <script>
   function approve() {
+    localStorage.setItem("loanStatus", "approved");
     document.getElementById("result").innerText = "Loan Approved ✅";
   }
 
   function reject() {
+    localStorage.setItem("loanStatus", "rejected");
     document.getElementById("result").innerText = "Loan Rejected ❌";
   }
 </script>
+
 
 </body>
 </html>
