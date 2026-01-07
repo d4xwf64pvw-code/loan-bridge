@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 35px;
+  height: 35px;
+  background: #00c6ff;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  max-width: 500px;
+  margin: auto;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+.payment-box {
+  background: rgba(0,0,0,0.3);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.email {
+  font-weight: bold;
+  color: #00c6ff;
+}
+
+.email-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #ffffff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  background: #00c6ff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #00c6ff;
+  color: #000;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#countdown {
+  font-size: 30px;
+  margin-top: 10px;
+}
