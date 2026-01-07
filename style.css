@@ -115,3 +115,13 @@ button:disabled {
   font-size: 30px;
   margin-top: 10px;
 }
+.payment-note {
+  font-size: 14px;
+  color: #1f7a4d;
+  background: #e9f7ef;
+  padding: 10px 14px;
+  border-left: 4px solid #1f7a4d;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-weight: 500;
+}
