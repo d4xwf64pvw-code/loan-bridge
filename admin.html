@@ -1,22 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>LoanBridge Admin Panel</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: white;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .approve { background: #22c55e; }
+    .reject { background: #ef4444; }
+    .pending { color: #facc15; }
+  </style>
 </head>
 <body>
 
-  <div class="admin-container">
-    <h1>LoanBridge Admin Panel</h1>
-    <p>Approve or reject loan applications</p>
+<h1>LoanBridge Admin Dashboard</h1>
 
-    <button id="approveBtn">✅ Approve Loan</button>
-    <button id="rejectBtn">❌ Reject Loan</button>
+<div class="card">
+  <p><strong>Applicant:</strong> Demo User</p>
+  <p><strong>Status:</strong> <span class="pending">Under Review</span></p>
 
-    <p id="adminStatus"></p>
-  </div>
+  <button class="approve" onclick="approve()">Approve</button>
+  <button class="reject" onclick="reject()">Reject</button>
 
-  <script src="admin.js"></script>
+  <p id="result"></p>
+</div>
+
+<script>
+  function approve() {
+    document.getElementById("result").innerText = "Loan Approved ✅";
+  }
+
+  function reject() {
+    document.getElementById("result").innerText = "Loan Rejected ❌";
+  }
+</script>
+
 </body>
 </html>
