@@ -53,3 +53,20 @@ function startCountdown(seconds) {
     time--;
   }, 1000);
 }
+// Check loan approval status
+const statusText = document.getElementById("loanStatus");
+
+if (statusText) {
+  const loanStatus = localStorage.getItem("loanStatus");
+
+  if (loanStatus === "approved") {
+    statusText.textContent = "🎉 Your loan has been APPROVED!";
+    statusText.style.color = "green";
+  } else if (loanStatus === "rejected") {
+    statusText.textContent = "❌ Your loan was rejected. Please contact support.";
+    statusText.style.color = "red";
+  } else {
+    statusText.textContent = "⏳ Your loan is under review. Please check back later.";
+    statusText.style.color = "orange";
+  }
+}
