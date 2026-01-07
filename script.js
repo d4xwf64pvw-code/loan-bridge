@@ -4,24 +4,22 @@ const form = document.getElementById("loanForm");
 const reviewBox = document.getElementById("reviewBox");
 const emailBtn = document.querySelector(".email-btn");
 
-let emailClicked = false;
+// Initial state
+applyBtn.disabled = true;
+paymentCheckbox.disabled = true;
 
-// User must click email button first
+// Enable checkbox ONLY after email button is clicked
 emailBtn.addEventListener("click", () => {
-  emailClicked = true;
+  paymentCheckbox.disabled = false;
+  alert("Email app opened. Please send your payment proof, then confirm.");
 });
 
-// Checkbox only works if email was clicked
+// Enable Apply button ONLY after checkbox is checked
 paymentCheckbox.addEventListener("change", () => {
-  if (emailClicked && paymentCheckbox.checked) {
-    applyBtn.disabled = false;
-  } else {
-    applyBtn.disabled = true;
-    paymentCheckbox.checked = false;
-    alert("Please send the payment proof email first.");
-  }
+  applyBtn.disabled = !paymentCheckbox.checked;
 });
 
+// Handle form submit
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   form.classList.add("hidden");
@@ -29,6 +27,7 @@ form.addEventListener("submit", function (e) {
   startCountdown(300);
 });
 
+// Countdown timer
 function startCountdown(seconds) {
   let time = seconds;
   const countdown = document.getElementById("countdown");
@@ -37,7 +36,9 @@ function startCountdown(seconds) {
     let mins = Math.floor(time / 60);
     let secs = time % 60;
     countdown.textContent =
-      `${mins.toString().padStart(2,"0")}:${secs.toString().padStart(2,"0")}`;
+      `${mins.toString().padStart(2, "0")}:${secs
+        .toString()
+        .padStart(2, "0")}`;
 
     if (time <= 0) {
       clearInterval(timer);
